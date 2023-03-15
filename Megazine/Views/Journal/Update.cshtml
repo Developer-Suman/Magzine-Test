@@ -1,0 +1,83 @@
+﻿@model Journal;
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_AdminLayout1.cshtml";
+}
+
+<form method="Post" enctype="multipart/form-data" asp-action="Update" asp-controller="Journal">
+   
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-8">
+                <div style="background-color:#2BA9AF;">
+                    <h1 class="update-header">EDIT JOURNAL DATA</h1>
+                </div>
+                
+             
+
+                <div class="row mt-4">
+                    <div class="col-md-3">
+                        @Html.DisplayNameFor(model=>Model.Title)
+                    </div>
+                    <div class="col-md-9">
+                        <input asp-for="Title" class="form-control" />
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.DisplayNameFor(model=>Model.Description)
+                    </div>
+                    <div class="col-md-9">
+                        <input asp-for="Description" class="form-control" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.DisplayNameFor(model=>Model.Author)
+                    </div>
+                    <div class="col-md-9">
+                        <input asp-for="Author" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.DisplayNameFor(model=>Model.CreatedDate)
+                    </div>
+                    <div class="col-md-9">
+                        @*@Html.DisplayFor(model=>model.CreatedDate)*@
+                        <input asp-for="CreatedDate" class="form-control" />
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.DisplayNameFor(model=>Model.JournalImageFile)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DisplayFor(model=>Model.JournalImage)
+                        <input asp-for="JournalImageFile" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-2">
+                        <input type="submit" value="UPDATE" asp-action="Update" class="btn btn-primary" />
+                    </div>
+                    <div class="col-md-10">
+                        <a asp-action="Index" asp-controller="Journal" class="btn btn-danger">BACK TO ADMIN</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+    </div>
+</form>
+
+

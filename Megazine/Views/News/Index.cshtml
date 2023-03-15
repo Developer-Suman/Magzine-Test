@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout1.cshtml";
+}
+
+
+
+<div class="article-list">
+    <div class="container mt-5">
+        <div class="row">
+         
+            <div class="col-md-10">
+                <h1 class="title-head">List of News</h1>
+            </div>
+            <div class="col-md-2">
+                <div class="row">
+                   
+                    <div class="col-md-6">
+                        
+                    </div>
+                    <div class="col-md-4">
+                        <a asp-action="Create" asp-controller="News" class="btn btn-primary">Create</a>
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="row">
+
+
+            <hr />
+            <div class="col-md-12 table-data mt-3">
+               
+
+                <table class="table table-bordered">
+                    <tr>
+                        
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>CreatedAt</th>
+                        <th>ImageName</th>
+                        <th>Action</th>
+
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                           
+                            <td>@item.Title</td>
+                            <td>@item.Description</td>
+                            <td>@item.Category</td>
+                            <td>@item.CreatedDate</td>
+                            <td>@item.ImageName</td>
+                            <td>
+                                <a asp-action="Update" asp-controller="News" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square "></i></a>
+                                <a asp-action="Delete" asp-controller="News" asp-route-id="@item.Id"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                                
+                            </td>
+                        </tr>
+                    }
+
+
+                </table>
+
+            </div>
+           
+        </div>
+    </div>
+</div>
+

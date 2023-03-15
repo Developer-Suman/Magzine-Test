@@ -1,0 +1,67 @@
+﻿@model Advertisement;
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout1.cshtml";
+}
+
+
+<div class="add-form">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-7 ">
+                <div style="background-color:#2BA9AF;">
+                    <h1 class="update-header">Add Your Advertisement</h1>
+                </div>
+                <form method="Post" enctype="multipart/form-data" asp-action="Create" asp-controller="Advertisement">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label asp-for="OwenerName"></label>
+                        </div>
+                        <div class="col-md-10">
+                            <input asp-for="OwenerName" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label asp-for="Amount"></label>
+                        </div>
+                        <div class="col-md-10">
+                            <input asp-for="Amount" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label asp-for="advertiseImageFile"></label>
+                        </div>
+                        <div class="col-md-10">
+                            <input asp-for="advertiseImageFile" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="button-part mt-4">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <input type="submit" value="ADD ADVERTISEMENT" class="btn btn-primary" />
+
+                            </div>
+                            <div class="col-md-9">
+                                <a asp-action="Index" asp-controller="Advertisement" class="btn btn-danger">BACK TO ADMIN</a>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </form>
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+    </div>
+</div>

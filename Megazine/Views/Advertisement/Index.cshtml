@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout1.cshtml";
+}
+
+
+
+<div class="article-list">
+    <div class="container mt-5">
+        <div class="row">
+            
+            <div class="col-md-10">
+                <h1 class="title-head">List of Advertisements</h1>
+            </div>
+            <div class="col-md-2">
+                <div class="row">
+                    
+                    <div class="col-md-6">
+                        
+                    </div>
+                    <div class="col-md-4">
+                        <a asp-action="Create" asp-controller="Advertisement" class="btn btn-primary">Create</a>
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="row">
+
+
+           <hr/>
+            <div class="col-md-12  table-data mt-3">
+
+                <table class="table table-bordered">
+                    <tr>
+                       
+                        <th>OwenerName</th>
+                        <th>Price</th>
+                        <th>CreatedDate</th>
+                        <th>ImageLink</th>
+                        <th>Action</th>
+
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            
+                            <td>@item.OwenerName</td>
+                            <td>@item.Amount</td>
+                            <td>@item.CreatedDate</td>
+                            <td>@item.advertiseImage</td>
+                            <td>
+                                <a asp-action="Update" asp-controller="Advertisement" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a asp-action="Delete" asp-controller="Advertisement" asp-route-id="@item.Id"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    }
+
+
+                </table>
+
+            </div>
+          
+        </div>
+    </div>
+</div>
+

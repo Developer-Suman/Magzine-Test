@@ -1,0 +1,67 @@
+﻿@model Advertisement;
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout1.cshtml";
+}
+
+
+<form asp-action="Delete">
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-8">
+                <div style="background-color:#2BA9AF;">
+                    <h1 class="update-header">Are You Sure want to delete???</h1>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.DisplayNameFor(model=>model.OwenerName)
+
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DisplayFor(model=>model.OwenerName)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.DisplayNameFor(model=>model.Amount)
+
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DisplayFor(model=>model.Amount)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.DisplayNameFor(model=>model.advertiseImage)
+
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DisplayFor(model=>model.advertiseImage)
+                    </div>
+                </div>
+
+
+                <div class="row mt-5">
+                    <div class="col-md-2">
+                        <input type="submit" value="CONFIRM" class="btn btn-primary" />
+
+                    </div>
+                    <div class="col-md-9">
+                        <a asp-action="Index" class="btn btn-danger">BACK TO ADMIN</a>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+    </div>
+</form>
+
